@@ -31,7 +31,30 @@ namespace GiftCardApp
         /// <summary>
         /// the date when the gift card was uploaded in the app
         /// </summary>
-        public string UploadDate { get; set; }
+        public DateTime UploadDate { get; set; }
+        #endregion
+        #region Methods
+        /// <summary>
+        /// Add amount to gift card to find new value
+        /// </summary>
+        /// <param name="amount">new amount in gift card</param>
+        /// <returns>the balance amount</returns>
+        public decimal NewValue(decimal amount)
+        {
+            Balance += amount;
+            return Balance;
+        }
+        /// <summary>
+        /// Use the amount in the gift card and find the balance
+        /// </summary>
+        /// <param name="amount">new amount in gift card</param>
+        /// <returns>the new balance after the gift card is swiped </returns>
+        public decimal NewBalance(decimal amount)
+        {
+            Balance -= amount;
+
+        }
         #endregion
     }
-}
+
+} 
